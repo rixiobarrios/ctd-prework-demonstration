@@ -15,9 +15,10 @@ function draw() {
   //call your functions and do your drawing here.
   background(82, 138, 222);
   //ground
+  noStroke();
   fill(196, 156, 47);
   rect(0, 480, 500, 20);
-
+  //function calls
   catPostTop();
   catPost();
   moveCat();
@@ -27,7 +28,6 @@ function draw() {
 }
 
 // write functions here that are called in your setup or draw function. please remove this one.
-
 function moveCat() {
   noStroke();
   // cat's body
@@ -53,6 +53,7 @@ function moveCat() {
   arc(380, 185, 40, 40, 60, 250);
 
   //breathing animation
+  //conditional statement
   body = body + speed;
 
   if (body > 200) {
@@ -130,6 +131,7 @@ function catTail() {
   line(90, tail, 160, 228);
 
   //twitching animations
+  //conditional statement
   tail = tail + motion;
   if (tail > 228) {
     motion = -1;
