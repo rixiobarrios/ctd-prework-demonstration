@@ -2,8 +2,9 @@
 // var x, y, etc..
 // you will see setup and draw is not definied or used warnings and other warnings in your console at the bottom right. This is a glitch in how codesandbox loads the libraries and methods from p5. All is well.
 var body = 220;
-var mouth = 0;
-var speed = 2;
+var tail = 200;
+var speed = 1;
+var motion = 2;
 
 function setup() {
   // create your canvas and define size here it's set to 500 x 500px you can also set any static shapes that won't need to be drawn here.
@@ -22,7 +23,7 @@ function draw() {
   moveCat();
   catPaws();
   catEyes();
-  // twoCircles();
+  catTail();
 }
 
 // write functions here that are called in your setup or draw function. please remove this one.
@@ -44,9 +45,6 @@ function moveCat() {
   //nose
   fill(255, 184, 243);
   triangle(350, 225, 360, 215, 340, 215);
-  //mouth
-  fill(0, 0, 0);
-  ellipse(350, 230, 5, 5);
   //right ear
   fill(255, 140, 0);
   arc(360, 180, 40, 40, 65, 250);
@@ -54,8 +52,7 @@ function moveCat() {
   fill(255, 140, 0);
   arc(380, 185, 40, 40, 60, 250);
 
-  //animations
-  mouth = mouth + speed;
+  //animation
   body = body + speed;
 
   if (body > 200) {
@@ -64,12 +61,6 @@ function moveCat() {
   if (body < 180) {
     speed = 20;
   }
-  // if (mouth > 200) {
-  //   speed = -0.2;
-  // }
-  // if (mouth < 180) {
-  //   speed = 20;
-  // }
 }
 
 //cat post before loop
@@ -118,10 +109,6 @@ function catPaws() {
   stroke(255);
   strokeWeight(15);
   line(220, 230, 240, 230);
-  //tail
-  stroke(222, 122, 9);
-  strokeWeight(15);
-  line(90, 228, 160, 228);
 }
 
 //cat eyes
@@ -133,4 +120,21 @@ function catEyes() {
   //right eye
   fill(222, 122, 9);
   arc(370, 200, 20, 20, 0, PI);
+}
+
+//cat's tail
+function catTail() {
+  //tail
+  stroke(222, 122, 9);
+  strokeWeight(15);
+  line(90, tail, 160, 228);
+
+  //animations
+  tail = tail + motion;
+  if (tail > 228) {
+    motion = -1;
+  }
+  if (tail < 220) {
+    motion = 1;
+  }
 }
