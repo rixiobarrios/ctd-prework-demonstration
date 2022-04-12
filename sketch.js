@@ -13,8 +13,8 @@ function setup() {
 
 function draw() {
   //call your functions and do your drawing here.
-  // please erase code below once you are working.
   background(82, 138, 222);
+  //ground
   fill(196, 156, 47);
   rect(0, 480, 500, 20);
 
@@ -52,7 +52,7 @@ function moveCat() {
   fill(255, 140, 0);
   arc(380, 185, 40, 40, 60, 250);
 
-  //animation
+  //breathing animation
   body = body + speed;
 
   if (body > 200) {
@@ -99,7 +99,7 @@ function catPostTop() {
   line(400, 253, 100, 253);
 }
 
-//cat paws
+//cat's paws
 function catPaws() {
   //left back paw
   stroke(255);
@@ -129,7 +129,7 @@ function catTail() {
   strokeWeight(15);
   line(90, tail, 160, 228);
 
-  //animations
+  //twitching animations
   tail = tail + motion;
   if (tail > 228) {
     motion = -1;
